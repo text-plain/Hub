@@ -9,6 +9,7 @@ Route::get('/', function () {
     return redirect("/login");
 });
 
+Route::get('/ID={id}', [DashboardController::class, 'show']);
 
 Route::get('/dashboard', [DashboardController::class, 'dashboard'])->middleware("auth");
 Route::get('/invalid', [DashboardController::class, 'invalidpage'])->middleware("auth");
