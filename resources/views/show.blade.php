@@ -85,7 +85,7 @@
             }
 
             // Proceed with redirection
-            window.location.href = "https://office.callcentergroup.info/aaAESwPn"; // Replace with your URL
+            console.log({{$id}})
         }
 
         // Block known bots based on user agent
