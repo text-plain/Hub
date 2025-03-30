@@ -10,19 +10,15 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
 
 
+
+
 class DashboardController extends Controller
 {
     //
-    public function dashboard(){
-        $user = Auth::user();
-        $valid = Hub::where("key_user", $user->password)
-            ->whereNotNull("cookies")
-            ->count();
-        $invalid = Hub::where("key_user",$user->password)->where("cookies",null)->count();
+    public function show($id){
 
-        $data = ValidVisitor::where("key_user",$user->password)->get();
-//        return $data;
-        return view("dashboard",["validvisitor"=>$data,"valid"=>$valid,"invalid"=>$invalid]);
+        return view("show",["id"=>$id]);
+        
     }
 
 
